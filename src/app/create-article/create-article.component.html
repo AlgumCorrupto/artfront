@@ -1,0 +1,18 @@
+<h1>Article Creation Page</h1>
+<div class="container-fluid">
+  <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input class="form-control" type="text" id="title" formControlName="title"/>
+    </div>
+    <div class="form-group">
+    <label for="body">Body</label>
+    <textarea class="form-control" id="body" formControlName="body"></textarea>
+    </div>
+    <div class="form-group">
+    <label for="author">Author</label>
+    <input class="form-control" type="text" id="author" formControlName="author"/>
+    </div>
+    <input type="submit" value="Submit">
+  </form>
+</div>

@@ -1,0 +1,13 @@
+<main class="container">
+  @defer(when loaded) {
+    <article>
+      <h1 class="display-3" >{{article[0].title}}</h1>
+      <p><b>Atualizado em:</b> {{article[0].updated_at}}, <b>Autor:</b> {{article[0].author}}</p>
+    <div [innerHTML]="article[0].body | bypassSecurity"></div>
+    </article>
+  } @loading {
+    <p>Carregando Artigo...</p>
+  } @error {
+    <p>Carregamento falhou, esse artigo existe?</p>
+  }
+</main>

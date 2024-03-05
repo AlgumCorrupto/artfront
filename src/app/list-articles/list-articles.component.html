@@ -1,0 +1,26 @@
+<h1>Lista de artigos</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Autor</th>
+      <th>Atualizado</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (article of articles; track $index) {
+      <tr>
+        <td>{{article.title}}</td>
+        <td>{{article.author}}</td>
+        <td>{{article.updated_at | date: 'dd/MM/yyyy' }}</td>
+        <td>
+          <button class="btn btn-success" (click)="OnRead(article.id)">Ler</button>
+          <button class="btn btn-primary" (click)="OnEdit(article.id)">edit</button>
+          <button class="btn btn-danger" (click)="OnDelete(article)">delete</button>
+        </td>
+      </tr>
+    }
+
+  </tbody>
+</table>
